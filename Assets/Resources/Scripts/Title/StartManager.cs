@@ -45,23 +45,26 @@ public class StartManager : MonoBehaviour
     {
         SoundManager.instance.PlaySE(0);
         StartCoroutine(Flash());
-        Invoke("TextOff", 0.3f);
-        Invoke("PienActive", 0.3f);
     }
 
     IEnumerator Flash()
     {
         int count = 0;
-        while (count < 4)
+        while (count < 6)
         {
             // 消える
             StartText.color = new Color(1f, 1f, 1f, 0.2f);
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.03f);
             // つく
             StartText.color = new Color(1f, 1f, 1f, 1f);
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.03f);
             count++;
         }
+        StartButton.SetActive(false);
+        StartText.enabled = false;
+
+        yield return new WaitForSeconds(0.15f);
+        PienActive();
     }
 
     IEnumerator PienFlash()
@@ -113,11 +116,6 @@ public class StartManager : MonoBehaviour
             PaonPanel.SetActive(false);
             BuyBotton.SetActive(false);
         }
-    }
-
-    void TextOff()
-    {
-        StartButton.SetActive(false);
     }
 
     public void PienPush()

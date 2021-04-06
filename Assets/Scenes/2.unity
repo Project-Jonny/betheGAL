@@ -1386,6 +1386,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7553370541998121277, guid: 2a59d90eed70e4e5fafc37ed414fe754,
         type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7553370541998121277, guid: 2a59d90eed70e4e5fafc37ed414fe754,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1401,6 +1406,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7553370541998121277, guid: 2a59d90eed70e4e5fafc37ed414fe754,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7553370541998121277, guid: 2a59d90eed70e4e5fafc37ed414fe754,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -1413,16 +1423,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7553370541998121277, guid: 2a59d90eed70e4e5fafc37ed414fe754,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7553370541998121277, guid: 2a59d90eed70e4e5fafc37ed414fe754,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7553370541998121277, guid: 2a59d90eed70e4e5fafc37ed414fe754,
         type: 3}
@@ -3722,7 +3722,7 @@ GameObject:
   - component: {fileID: 845758343}
   - component: {fileID: 845758342}
   m_Layer: 0
-  m_Name: moveStage 1
+  m_Name: moveStage_Yellow
   m_TagString: MoveFloor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3760,10 +3760,10 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 7d836b66c8a724c0187c337f9becaad6, type: 2}
   m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!251 &845758344
 PlatformEffector2D:
@@ -3793,22 +3793,22 @@ BoxCollider2D:
   m_GameObject: {fileID: 845758341}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 7d836b66c8a724c0187c337f9becaad6, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.16198087}
+  m_Offset: {x: 0, y: 0.016699523}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.26, y: 0.36}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.058968127}
+  m_Size: {x: 1, y: 0.025934756}
   m_EdgeRadius: 0
 --- !u!212 &845758346
 SpriteRenderer:
@@ -3849,7 +3849,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fa3661cfa85b44322ba7d967a2efa5f3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 66d6a666e6d8842a6bea60c082833d21, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4293,7 +4293,7 @@ GameObject:
   - component: {fileID: 1365717404}
   - component: {fileID: 1365717403}
   m_Layer: 0
-  m_Name: moveStage 2
+  m_Name: moveStage_Blue
   m_TagString: MoveFloor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4338,7 +4338,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d89eee3db4f444cd7a96dadf0e6b94a9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1b3267d60f1a143a9a94bcceae4949cb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4395,10 +4395,10 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 7d836b66c8a724c0187c337f9becaad6, type: 2}
   m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!251 &1365717405
 PlatformEffector2D:
@@ -4428,22 +4428,22 @@ BoxCollider2D:
   m_GameObject: {fileID: 1365717400}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 7d836b66c8a724c0187c337f9becaad6, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.16198087}
+  m_Offset: {x: 0, y: 0.016699523}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.26, y: 0.38}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.058968127}
+  m_Size: {x: 1, y: 0.025934756}
   m_EdgeRadius: 0
 --- !u!1 &1376025617
 GameObject:
@@ -4494,6 +4494,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1538010521166252331, guid: 0f7c4b217a5814fb09d6603f05884336,
         type: 3}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538010521166252331, guid: 0f7c4b217a5814fb09d6603f05884336,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -4509,6 +4514,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1538010521166252331, guid: 0f7c4b217a5814fb09d6603f05884336,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538010521166252331, guid: 0f7c4b217a5814fb09d6603f05884336,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -4521,16 +4531,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1538010521166252331, guid: 0f7c4b217a5814fb09d6603f05884336,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1538010521166252331, guid: 0f7c4b217a5814fb09d6603f05884336,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 1538010521166252331, guid: 0f7c4b217a5814fb09d6603f05884336,
         type: 3}
@@ -6823,7 +6823,7 @@ GameObject:
   - component: {fileID: 2111582795}
   - component: {fileID: 2111582796}
   m_Layer: 0
-  m_Name: moveStage
+  m_Name: moveStage_Pink
   m_TagString: MoveFloor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6857,22 +6857,22 @@ BoxCollider2D:
   m_GameObject: {fileID: 2111582790}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 7d836b66c8a724c0187c337f9becaad6, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.16198087}
+  m_Offset: {x: 0, y: 0.016699523}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.26, y: 0.36}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.058968127}
+  m_Size: {x: 1, y: 0.025934756}
   m_EdgeRadius: 0
 --- !u!212 &2111582793
 SpriteRenderer:
@@ -6913,7 +6913,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ee4648d8a19234892b24d594ca364c2c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e0db3175eeec84b9e993ed63ea67d880, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6970,10 +6970,10 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 7d836b66c8a724c0187c337f9becaad6, type: 2}
   m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!1 &6107789114647474944
 GameObject:

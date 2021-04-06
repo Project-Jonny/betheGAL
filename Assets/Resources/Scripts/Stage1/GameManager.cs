@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
         string SceneName = SceneManager.GetActiveScene().name;
         SoundManager.instance.PlayBGM(SceneName);
         TextPos = GameOverText.transform.position;
-        Invoke("MoveScene", 4f);
     }
 
     void Update()
@@ -23,7 +22,7 @@ public class GameManager : MonoBehaviour
         GameOverText.transform.position = TextPos + Random.insideUnitSphere * shakePower;
     }
 
-    void MoveScene()
+    public void MoveScene()
     {
         SceneManager.LoadScene("Title");
     }

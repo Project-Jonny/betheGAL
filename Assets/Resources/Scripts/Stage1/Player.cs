@@ -33,6 +33,15 @@ public class Player : MonoBehaviour
 
     public LifeGauge lifeGauge;
 
+    // 踏みつけ判定の高さの割合(%)
+    public float stepOnRate;
+
+    // BoxColliderの取得
+    private BoxCollider2D boxcol;
+
+    // MoveObj
+    private MoveObject moveObj = null;
+
     public enum MOVE_DIRECTION
     {
         STOP,
@@ -47,6 +56,7 @@ public class Player : MonoBehaviour
         SoundManager.instance.PlayBGM(SceneName);
         rigidBody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        boxcol = GetComponent<BoxCollider2D>();
     }
 
     void Update()
@@ -124,42 +134,54 @@ public class Player : MonoBehaviour
                 break;
         }
 
-        rigidBody2D.velocity = new Vector2(speed, rigidBody2D.velocity.y);
+        //rigidBody2D.velocity = new Vector2(speed, rigidBody2D.velocity.y);
+
+        //移動速度を設定
+        Vector2 addVelocity = Vector2.zero;
+        if (moveObj != null)
+        {
+            addVelocity = moveObj.GetVelocity();
+        }
+        rigidBody2D.velocity = new Vector2(speed, rigidBody2D.velocity.y) + addVelocity;
 
     }
 
+    // 右の移動ボタンを押した時
     public void RightDown()
     {
         animator.SetBool("run", true);
         right = true;
     }
 
+    // 右の移動ボタンを離した時
     public void RightUp()
     {
         animator.SetBool("run", false);
         right = false;
     }
 
+    // 左の移動ボタンを押した時
     public void LeftDown()
     {
         animator.SetBool("run", true);
         left = true;
     }
 
+    // 左の移動ボタンを離した時
     public void LeftUp()
     {
         animator.SetBool("run", false);
         left = false;
     }
 
-    // 押したとき
+    // ジャンプボタンを押した時
     public void DownJumpButton()
     {
         SoundManager.instance.PlaySE(2);
         downJumpButton = true; // こいつは1フレームでfalseにする
         onJumpButton = true;   // こいつはボタンを離したときにfalseにする
     }
-    // はなしたとき
+    // ジャンプボタンを離した時
     public void UpJumpButton()
     {
         onJumpButton = false;
@@ -212,6 +234,35 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //動く床
+        if (collision.collider.tag == "MoveFloor")
+        {
+            //踏みつけ判定になる高さ
+            float stepOnHeight = (boxcol.size.y * (stepOnRate / 100f));
+            //踏みつけ判定のワールド座標
+            float judgePos = transform.position.y - (boxcol.size.y / 2f) + stepOnHeight;
+            foreach (ContactPoint2D p in collision.contacts)
+            {
+                //動く床に乗っている
+                if (p.point.y > judgePos)
+                {
+                    moveObj = collision.gameObject.GetComponent<MoveObject>();
+                }
+            }
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "MoveFloor")
+        {
+            //動く床から離れた
+            moveObj = null;
+        }
+    }
+
     public void OnCompleteAnimation()
     {
         this.gameObject.SetActive(false);
@@ -221,7 +272,7 @@ public class Player : MonoBehaviour
     {
         if (GameData.instance.PaonMode == false)
         {
-            GameData.instance.Life = GameData.instance.Life - 1;
+            GameData.instance.Life -= 1;
         }
 
         if (GameData.instance.Life == 0)

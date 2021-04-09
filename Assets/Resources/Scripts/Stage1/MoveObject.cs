@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class MoveObject : MonoBehaviour
 {
+    // 移動経路
     public GameObject[] movePoint;
+    // 移動スピード
     public float speed = 1.0f;
 
     private Rigidbody2D rb;
     private int nowPoint = 0;
     private bool returnPoint = false;
 
+    // 動く床計算用
     private Vector2 oldPos = Vector2.zero;
     private Vector2 myVelocity = Vector2.zero;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
         if (movePoint != null && movePoint.Length > 0 && rb != null)
         {
             rb.position = movePoint[0].transform.position;
@@ -95,5 +99,6 @@ public class MoveObject : MonoBehaviour
     public Vector3 GetVelocity()
     {
         return myVelocity;
+        Debug.Log("Velocity:" + myVelocity);
     }
 }

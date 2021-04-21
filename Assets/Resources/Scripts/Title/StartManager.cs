@@ -17,9 +17,6 @@ public class StartManager : MonoBehaviour
     public Image pienImage;
     public Image paonImage;
 
-    public GameObject PaonPanel;
-    public GameObject BuyBotton;
-
     public GameObject Clear;
 
     SaveData saveData;
@@ -105,17 +102,7 @@ public class StartManager : MonoBehaviour
     void PienActive()
     {
         pien.SetActive(true);
-        PaonPanel.SetActive(true);
-        BuyBotton.SetActive(true);
         paon.SetActive(true);
-
-        int paonKaeta = PlayerPrefs.GetInt("PaonKaetayo", 0);
-        Debug.Log(paonKaeta);
-        if (paonKaeta == 1)
-        {
-            PaonPanel.SetActive(false);
-            BuyBotton.SetActive(false);
-        }
     }
 
     public void PienPush()

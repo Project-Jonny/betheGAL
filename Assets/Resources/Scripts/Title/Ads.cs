@@ -6,9 +6,14 @@ using System.Threading;
 
 public class Ads : MonoBehaviour
 {
-    void Start()
+
+    private void Awake()
     {
         Yodo1U3dMas.InitializeSdk();
+    }
+
+    void Start()
+    {
         // Banner's delegate should be set before the show function is called.
         BannerEvents();
 
@@ -16,16 +21,13 @@ public class Ads : MonoBehaviour
         // This is a simple time-lapse operation to test whether the ads is displayed, you can also do it the other way.
         // Because normally the show function is not called after the SDK initialization function.
         // You can call the show function after some events in the game.
-        Thread.Sleep(2);
-        ShowBanner();
-        //StartCoroutine(Ban());
+        //Thread.Sleep(2);
     }
 
     public void ShowBanner()
     {
         // You can call the ShowBannerAd() function.(default bannerAd align type is BannerBottom | BannerHorizontalCenter)
         Yodo1U3dMas.ShowBannerAd();
-        // BannerEvents();
     }
 
     public void BannerEvents()
@@ -46,14 +48,4 @@ public class Ads : MonoBehaviour
             }
         });
     }
-
-    /*
-    IEnumerator Ban()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(1);
-            ShowBanner();
-        }
-    }*/
 }

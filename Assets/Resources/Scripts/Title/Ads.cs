@@ -6,10 +6,13 @@ using System.Threading;
 
 public class Ads : MonoBehaviour
 {
-
     private void Awake()
     {
-        Yodo1U3dMas.InitializeSdk();
+        if (GameData.instance.sdk == false)
+        {
+            Yodo1U3dMas.InitializeSdk();
+            GameData.instance.sdk = true;
+        }
     }
 
     void Start()
@@ -21,7 +24,6 @@ public class Ads : MonoBehaviour
         // This is a simple time-lapse operation to test whether the ads is displayed, you can also do it the other way.
         // Because normally the show function is not called after the SDK initialization function.
         // You can call the show function after some events in the game.
-        //Thread.Sleep(2);
     }
 
     public void ShowBanner()

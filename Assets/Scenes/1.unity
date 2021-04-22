@@ -2433,7 +2433,7 @@ MonoBehaviour:
   jumpTime: 0.25
   nextScene: 2
   ground: {fileID: 1273176761}
-  lifeGauge: {fileID: 0}
+  lifeGauge: {fileID: 8714893371020889249}
   stepOnRate: 0
 --- !u!50 &1963691057
 Rigidbody2D:

@@ -20,4 +20,5 @@ public class GameData : MonoBehaviour
 
     public int Life;
     public bool PaonMode;
+    public bool sdk;
 }

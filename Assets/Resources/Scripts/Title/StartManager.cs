@@ -20,6 +20,8 @@ public class StartManager : MonoBehaviour
     public GameObject PaonPanel;
     public GameObject BuyBotton;
 
+    public GameObject soundButton;
+
     public GameObject Clear;
 
     SaveData saveData;
@@ -34,6 +36,8 @@ public class StartManager : MonoBehaviour
         Player.DeathCount = 0;
         string SceneName = SceneManager.GetActiveScene().name;
         SoundManager.instance.PlayBGM(SceneName);
+
+        soundButton.SetActive(false);
 
         if (saveData.GameClear == true)
         {
@@ -104,6 +108,7 @@ public class StartManager : MonoBehaviour
 
     void PienActive()
     {
+        soundButton.SetActive(true);
         pien.SetActive(true);
         PaonPanel.SetActive(true);
         BuyBotton.SetActive(true);

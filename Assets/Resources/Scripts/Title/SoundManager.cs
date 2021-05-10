@@ -10,6 +10,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip[] audioClipsSE;
 
     string sceneName = "";
+    public int n = 0;
 
     public void StopBGM()
     {
@@ -24,10 +25,10 @@ public class SoundManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+        //else
+        //{
+        //    Destroy(gameObject);
+        //}
     }
 
     void Start()
@@ -100,5 +101,19 @@ public class SoundManager : MonoBehaviour
     public void PlaySE(int index)
     {
         audioSourceSE.PlayOneShot(audioClipsSE[index]);
+    }
+
+    public void VolumeUp()
+    {
+        audioSourceBGM.volume = 1;
+        audioSourceSE.volume = 1;
+        n = 0;
+    }
+
+    public void VolumeDown()
+    {
+        audioSourceBGM.volume = 0;
+        audioSourceSE.volume = 0;
+        n = 1;
     }
 }
